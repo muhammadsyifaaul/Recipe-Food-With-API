@@ -1,0 +1,81 @@
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: aqua;
+    position: fixed; /* Menambahkan properti position: fixed */
+    top: 0; /* Menempel di atas halaman */
+    left: 0;
+    width: 100%; /* Menyesuaikan lebar penuh halaman */
+    z-index: 1000; /* Menambahkan z-index agar di atas elemen lainnya */
+}
+
+.logo img {
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 3rem;
+}
+
+.user img {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 4rem;
+    cursor: pointer;
+}
+.user-option {
+    position: absolute;
+    width: 100px;
+    display: none;
+    right: 4rem;
+    padding: 1rem;
+    background-color: #fff;
+}
+.user-option ul a {
+    color: #000;
+    text-decoration: none;
+}
+.user-option ul a li{
+    margin-top: 0.5rem;
+    font-weight: 600;
+    width: 80px;
+}
+.user-option ul a li:hover {
+    color: #28ee71;
+    transition: 0.4s ease-in-out;
+}
+
+.search {
+    display: flex;
+    position: relative;
+}
+
+.search select {
+    padding: 0.4rem;
+    font-weight: 600;
+    border-radius: 15px;
+    position: absolute;
+    left: -5rem;
+    background-color: #e7dfdf;
+    border: none;
+}
+
+.search input {
+    width: 400px;
+    height: 28px;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+}
+
+.search input::placeholder,
+.search input:focus {
+    text-align: center;
+    font-weight: 600;
+    color: #000;
+    outline: none;
+}
