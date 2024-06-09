@@ -1,38 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
 * {
     font-family: "Montserrat", sans-serif;
 }
 
-header {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem;
-    background-color: aqua;
-    position: fixed; /* Menambahkan properti position: fixed */
-    top: 0; /* Menempel di atas halaman */
-    left: 0;
-    width: 100%; /* Menyesuaikan lebar penuh halaman */
-    z-index: 1000; /* Menambahkan z-index agar di atas elemen lainnya */
+    padding: 0.5rem 0;
+    width: 100%; 
+    overflow: hidden;
 }
 
 .logo img {
+    margin-left: 2rem;
     width: 40px;
     border-radius: 50%;
-    margin-left: 3rem;
 }
 
 .user img {
     width: 40px;
     border-radius: 50%;
-    margin-right: 4rem;
     cursor: pointer;
+    margin-right: 2rem;
 }
 .user-option {
     position: absolute;
     width: 100px;
     display: none;
-    right: 4rem;
-    padding: 1rem;
+    right: 2rem;
+    padding: 0.9rem;
     background-color: #fff;
 }
 .user-option ul a {
@@ -70,6 +67,7 @@ header {
     border-radius: 15px;
     border: none;
     text-align: center;
+    background-color: rgba(117, 117, 117, 0.3);
 }
 
 .search input::placeholder,
@@ -78,4 +76,166 @@ header {
     font-weight: 600;
     color: #000;
     outline: none;
+}
+header {
+    width: 100%;
+    height: 60vh;
+    background: linear-gradient(rgba(29, 28, 28, 0.5),rgba(29, 28, 28, 0.5)), url('../img/header.jpg');
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.more-info {
+    margin-left: 5rem;
+    font-weight: 100;
+    text-align: center;
+    word-spacing: 0.3rem;
+}
+.more-info p {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    color: #fccfcf;
+}
+.more-info span {
+    color: #fff;
+    font-weight: 600;
+}
+
+.more-info button {
+    font-size: 1.4rem;
+    padding: 0.3rem 2rem;
+    background-color: rgba(255, 255, 255,0.3);
+    border-color: #fff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.6s ease-in-out;
+}
+.more-info button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.social-media ul li a {
+    font-size: 3rem;
+}
+.social-media ul li:nth-child(1) a {
+    color: blue;
+}
+.social-media ul li:nth-child(2) a{
+    color: red;
+}
+.social-media ul li:nth-child(3) a{
+    color: #61b4e4;
+}
+.social-media ul li:nth-child(4) a{
+    color: #690101;
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    margin: auto;
+    overflow: hidden;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+.title {
+    color: #84bd00;
+    font-size: 2rem;
+    font-family: "Montez", cursive;
+}
+.diet,
+.allergies,
+.cuisine,
+.goals {
+    display: flex;
+    flex-direction: column;
+
+    align-items: start;
+    text-align: start;
+    font-size: 0.9rem;
+}
+
+.diet h1,
+.allergies h1,
+.cuisine h1,
+.goals h1 {
+    font-size: 1.4rem;
+    color: #84bd00;
+}
+.filter ul li { 
+    margin-top: 0.5rem;
+}
+.filter ul li:hover {
+    color: #84bd00;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.content {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.content hr {
+    width: 100%;
+    position: relative;
+
+}
+.content nav{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background-color: #fff;
+}
+.content nav ul {
+    display: flex;
+    gap: 4rem;
+}
+.content nav ul li a{
+    text-decoration: none;
+    color: #84bd00;
+}
+.content ul li a:hover {
+    font-weight: 700;
+    transition: 0.4s ease-in-out;
+}
+.cards {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+    flex-wrap: wrap;
+}
+.card {
+    height: 170px;
+}
+.card img {
+    width: 150px;
+}
+.sideimage {
+    overflow: hidden;
+}
+
+
+.sideimage img{
+    width: 30%;
+    transform: rotate(90deg);
+    position: absolute;
+    right: -4rem;
+    bottom: -20rem;
+    z-index: -1;
 }

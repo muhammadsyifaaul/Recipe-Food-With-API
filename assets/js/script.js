@@ -1,23 +1,39 @@
 const user = document.querySelector('.user');
 const userOption = document.querySelector('.user-option');
-const pageWidth = window.innerWidth;
-const tabletMobile = 768
+const tabletMobile = 768;
 
-if (pageWidth >= 1200 && pageWidth <= tabletMobile) {
-    // Event listeners untuk perangkat desktop
-    user.addEventListener('mouseenter', () => {
-        userOption.style.display = 'block';
-    });
+function updateEventListeners() {
+    const pageWidth = window.innerWidth;
+    user.removeEventListener('mouseenter', showUserOption);
+    user.removeEventListener('mouseleave', hideUserOption);
+    user.removeEventListener('click', toggleUserOption);
 
-    user.addEventListener('mouseleave', () => {
-        userOption.style.display = 'none';
-    });
-} else {
-    user.addEventListener('click', () => {
-        if (userOption.style.display === 'block') {
-            userOption.style.display = 'none';
-        } else {
-            userOption.style.display = 'block';
-        }
-    });
+    if (pageWidth > tabletMobile) {
+        user.addEventListener('mouseenter', showUserOption);
+        user.addEventListener('mouseleave', hideUserOption);
+    } else {
+        user.addEventListener('click', toggleUserOption);
+    }
 }
+
+function showUserOption() {
+    userOption.style.display = 'block';
+}
+
+function hideUserOption() {
+    userOption.style.display = 'none';
+}
+
+function toggleUserOption() {
+    if (userOption.style.display === 'block') {
+        userOption.style.display = 'none';
+    } else {
+        userOption.style.display = 'block';
+    }
+}
+
+
+window.addEventListener('resize', updateEventListeners);
+
+
+updateEventListeners();
